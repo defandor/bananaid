@@ -1,0 +1,44 @@
+{% load static %}
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    <title>BankID</title>
+    <link href="{% static 'style/main.css' %}" rel="stylesheet">
+</head>
+<body class="">
+<main class="container">
+    <div class="container__content">
+        <div class="bankid-logo-wrapper">
+            <img alt="" class="bankid-logo" src="{% static 'img/logo.svg' %}">
+        </div>
+        <div class="page" id="login" style="flex-grow: 0.5;">
+            <div class="page__content card">
+                <div class="card__heading">
+                    <h1 tabindex="-1" data-i18n="permission_authentication_heading">Bekreft innlogging</h1>
+                </div>
+                <div class="card__body">
+                    <p id="authentication-merchant-label" class="card__label"
+                       data-i18n="permission_common_merchant_label">Hvor</p>
+                    <p aria-labelledby="authentication-merchant-label" class="js-merchant-name card__merchant-name">
+                        BankID MinSide</p>
+                </div>
+            </div>
+            <form action="" method="post" >
+                {% csrf_token %}
+                <div class="page__buttons">
+                    <button data-i18n="permission_authentication_button" type="submit" id="login-button"
+                            class="login-button">Bekreft
+                    </button>
+                    <button data-i18n="decline" id="decline-login-button" onclick="history.back();" class="button button--link">Avslå</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<script>
+</script>
+</body>
+</html>

