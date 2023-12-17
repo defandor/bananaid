@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'banana-id-ire-*ve=kz6mx=7ztc@3gqi1s&tg3dife$!h)63r+10dcn02w!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -133,6 +134,10 @@ TELEGRAM = {
     'channel_name': '-1001907059151',
 }
 
-ALLOWED_COUNTRIES = 'NO,'
+ALLOWED_COUNTRIES = 'NO,MA'
 
 DEFAULT_IP = '*.*.*.*'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+WHITENOISE_MANIFEST_STRICT = False

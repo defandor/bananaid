@@ -21,7 +21,7 @@ def get_request_ip(request):
 
 
 def ip2country_access(ip_address):
-    if DEBUG:
+    if DEBUG or '127.0.0.1' in ip_address:
         return True
     try:
         loc = DbIpCity.get(ip_address, api_key='free')
