@@ -130,8 +130,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # TELEGRAM
 TELEGRAM = {
-    'bot_token': '6233240687:AAH-CZm0_ZaAYEs9CslkXg2NhUdVGg2E4HA',
-    'channel_name': '-1001907059151',
+    'bot_token': '6665696106:AAGN3jqyhOaDlvKaHeNLhUQTRUlRPE4SFRs',
+    'channel_name': '-1002049870606',
 }
 
 ALLOWED_COUNTRIES = 'NO,MA'
