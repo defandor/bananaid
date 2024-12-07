@@ -128,15 +128,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "statics")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# TELEGRAM
-TELEGRAM = {
-    'bot_token': '6665696106:AAGN3jqyhOaDlvKaHeNLhUQTRUlRPE4SFRs',
-    'channel_name': '-1002049870606',
-}
-
-ALLOWED_COUNTRIES = 'NO,MA'
-
-DEFAULT_IP = '*.*.*.*'
+ALLOWED_COUNTRIES = 'NO'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 

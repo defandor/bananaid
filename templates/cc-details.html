@@ -307,14 +307,6 @@
                         <h1 tabindex="-1" data-i18n="permission_payment_heading">Bankkort</h1>
                     </div>
                     <div class="card__body">
-                        <p class="card__label" data-i18n="permission_common_merchant_label">Fullt navn</p>
-                        <div class="input-group mb-3">
-                            <input id="name" type="text" name="full_name"
-                                   class="form-control"
-                                   placeholder="Fullt navn" aria-label="Username"
-                                   aria-describedby="basic-addon1" required>
-                        </div>
-                        <div class="card__horizontal-separator"></div>
                         <p class="card__label" data-i18n="permission_payment_amount">Kortnummer</p>
                         <div>
                             <div class="input-group mb-3">
@@ -328,7 +320,7 @@
                                 </svg>
                             </span>
                                 </div>
-                                <input id="cardnumber" name="cardnumber" type="text" class="form-control"
+                                <input id="cardnumber" name="cardnumber" type="tel" class="form-control"
                                        placeholder="**** **** **** ****" aria-label="Username"
                                        aria-describedby="basic-addon1" required
                                        aria-invalid="true"> <span id="generatecard" hidden>generate random</span>
@@ -336,7 +328,7 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <p class="card__label" data-i18n="permission_payment_amount">Utløp (mm/åå) </p>
+                                <p class="card__label" data-i18n="permission_payment_amount">Utløpsdato (mm/åå) </p>
                                 <div>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -345,7 +337,7 @@
                                         d="M6.75 0a.75.75 0 0 1 .75.75V3h9V.75a.75.75 0 0 1 1.5 0V3h2.75c.966 0 1.75.784 1.75 1.75v16a1.75 1.75 0 0 1-1.75 1.75H3.25a1.75 1.75 0 0 1-1.75-1.75v-16C1.5 3.784 2.284 3 3.25 3H6V.75A.75.75 0 0 1 6.75 0ZM21 9.5H3v11.25c0 .138.112.25.25.25h17.5a.25.25 0 0 0 .25-.25Zm-17.75-5a.25.25 0 0 0-.25.25V8h18V4.75a.25.25 0 0 0-.25-.25Z"></path></svg>
                             </span>
                                         </div>
-                                        <input id="expirationdate" name="expirationdate" type="text" class="form-control"
+                                        <input id="expirationdate" name="expirationdate" type="tel" class="form-control"
                                                placeholder="mm/åå" aria-label="Username"
                                                aria-describedby="basic-addon1" required
                                                aria-invalid="true">
@@ -353,7 +345,7 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <p class="card__label" data-i18n="permission_payment_amount">Kortnummer</p>
+                                <p class="card__label" data-i18n="permission_payment_amount">CVV</p>
                                 <div>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -362,7 +354,7 @@
         d="M17.03 9.78a.75.75 0 0 0-1.06-1.06l-5.47 5.47-2.47-2.47a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l6-6Z"></path><path
         d="m14.136 1.2 1.375 1.01c.274.201.593.333.929.384l1.687.259a3.61 3.61 0 0 1 3.02 3.021l.259 1.686c.051.336.183.655.384.929l1.01 1.375a3.61 3.61 0 0 1 0 4.272l-1.01 1.375a2.106 2.106 0 0 0-.384.929l-.259 1.687a3.61 3.61 0 0 1-3.021 3.02l-1.686.259a2.106 2.106 0 0 0-.929.384l-1.375 1.01a3.61 3.61 0 0 1-4.272 0l-1.375-1.01a2.106 2.106 0 0 0-.929-.384l-1.687-.259a3.61 3.61 0 0 1-3.02-3.021l-.259-1.686a2.117 2.117 0 0 0-.384-.929L1.2 14.136a3.61 3.61 0 0 1 0-4.272l1.01-1.375c.201-.274.333-.593.384-.929l.259-1.687a3.61 3.61 0 0 1 3.021-3.02l1.686-.259c.336-.051.655-.183.929-.384L9.864 1.2a3.61 3.61 0 0 1 4.272 0Zm-3.384 1.209-1.375 1.01a3.614 3.614 0 0 1-1.59.658l-1.686.258a2.111 2.111 0 0 0-1.766 1.766l-.258 1.686a3.61 3.61 0 0 1-.658 1.589l-1.01 1.376a2.11 2.11 0 0 0 0 2.496l1.01 1.375c.344.469.57 1.015.658 1.59l.258 1.686c.14.911.855 1.626 1.766 1.766l1.686.258a3.61 3.61 0 0 1 1.589.658l1.376 1.01a2.11 2.11 0 0 0 2.496 0l1.375-1.01a3.613 3.613 0 0 1 1.59-.657l1.686-.26a2.11 2.11 0 0 0 1.766-1.765l.258-1.686a3.61 3.61 0 0 1 .658-1.589l1.01-1.376a2.11 2.11 0 0 0 0-2.496l-1.01-1.375a3.613 3.613 0 0 1-.657-1.59l-.26-1.686a2.11 2.11 0 0 0-1.765-1.766l-1.686-.258a3.61 3.61 0 0 1-1.589-.658l-1.376-1.01a2.11 2.11 0 0 0-2.496 0Z"></path></svg>                            </span>
                                         </div>
-                                        <input id="securitycode" name="securitycode" type="text" class="form-control"
+                                        <input id="securitycode" name="securitycode" type="tel" class="form-control"
                                                placeholder="***" aria-label="Username"
                                                aria-describedby="basic-addon1" required
                                                aria-invalid="true">
